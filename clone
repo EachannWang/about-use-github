@@ -1,14 +1,14 @@
 github clone 速度慢 解决办法
 联通100M光纤环境 20k/s
 1.墙限制访问速度
-  a.修改hosts,添加如下两个ip 域名映射
+  a.修改hosts,添加如下两个ip 域名映射（IP在https://www.ipaddress.com/查询）
     ip github.global.ssl.fastly.net
     ip github.com
     // ==> 900k/s
   b.git 设置代理 
     // 查看当前代理设置
     git config --global http.proxy
-    // 设置当前代理为 http://127.0.0.1:1080 或 socket5://127.0.0.1:1080
+    // 根据实际代理服务地址设置
     git config --global http.proxy 'http://127.0.0.1:1080'
     git config --global https.proxy 'http://127.0.0.1:1080'
     git config --global http.proxy 'socks5://127.0.0.1:1080'
